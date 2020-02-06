@@ -1,4 +1,5 @@
 from tkinter import *
+import time
 
 tk = Tk()
 tk.wm_iconbitmap('icon.ico')
@@ -21,6 +22,9 @@ while True:
         nument.delete(0,'end')
         nument2.delete(0,'end')
         result.configure(text="")
+    def exitcmnd():
+        time.sleep(0.2)
+        tk.destroy()
 
 
     
@@ -35,6 +39,7 @@ while True:
     mul = Button(text="x",bg="green",width=5,command=mul)
     div = Button(text="/",bg="green",width=5,command=div)
     clean = Button(text="C",bg="orange",width=5,command=clean)
+    exit = Button(text="Çıxış",width=5,command=exitcmnd)
     result = Label(text="",bg="grey",font=("Arial", 16))
     
 
@@ -45,6 +50,7 @@ while True:
     mul.place(x = 290,y = 220)
     div.place(x = 360,y = 220)
     clean.place(x = 330,y = 300)
+    exit.place(x = 410,y = 300)
     nument.place(x = 275,y = 115)
     nument2.place(x = 275,y = 155)
     numtxt.place(x = 130,y=110)
