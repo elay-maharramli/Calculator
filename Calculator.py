@@ -17,6 +17,10 @@ while True:
         result.configure(text=str(int(nument.get()) * int(nument2.get())))
     def div():
         result.configure(text=str(int(int(nument.get()) / int(nument2.get()))))
+    def clean():
+        nument.delete(0,'end')
+        nument2.delete(0,'end')
+        result.configure(text="")
 
 
     
@@ -30,6 +34,7 @@ while True:
     sub = Button(text="-",bg="green",width=5,command=sub)
     mul = Button(text="x",bg="green",width=5,command=mul)
     div = Button(text="/",bg="green",width=5,command=div)
+    clean = Button(text="C",bg="orange",width=5,command=clean)
     result = Label(text="",bg="grey",font=("Arial", 16))
     
 
@@ -39,6 +44,7 @@ while True:
     sub.place(x = 220,y = 220)
     mul.place(x = 290,y = 220)
     div.place(x = 360,y = 220)
+    clean.place(x = 330,y = 300)
     nument.place(x = 275,y = 115)
     nument2.place(x = 275,y = 155)
     numtxt.place(x = 130,y=110)
