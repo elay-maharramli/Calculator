@@ -1,5 +1,6 @@
 from tkinter import *
 import time
+import tkinter.messagebox
 
 tk = Tk()
 tk.wm_iconbitmap('icon.ico')
@@ -23,10 +24,12 @@ while True:
         nument2.delete(0,'end')
         result.configure(text="")
     def exitcmnd():
-        time.sleep(0.2)
-        tk.destroy()
-
-
+        answer = tkinter.messagebox.askquestion(title="Çıxış", message="Çıxmağa əminsiniz?")
+        if answer == "yes":
+            time.sleep(0.2)
+            tk.destroy()
+        print(" ",end=" ")
+            
     
     caltxt = Label(text="Kalkulyator",bg="grey",fg="blue",font=("Arial", 23))
     numtxt = Label(text="Birinci ədəd:",bg="grey",font=("Arial", 15))
